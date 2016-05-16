@@ -1,0 +1,22 @@
+<div class="col-md-3">
+    <user-creation created="addUser()"></user-creation>
+</div>
+<div class="col-md-9">
+    <div class="overflow-view">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <th>Last name</th>
+            <th>Gender</th>
+            <th>Email</th>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user of users" (click)="onSelect(user)">
+                <td>{{user.lastName}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.email}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <user-detail [user]="selectedUser"></user-detail>
+</div>
