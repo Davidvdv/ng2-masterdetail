@@ -22,7 +22,11 @@ var UserListComponent = (function () {
     UserListComponent.prototype.onSelect = function (user) {
         this.selectedUser = user;
     };
-    UserListComponent.prototype.addPlayer = function (user) {
+    UserListComponent.prototype.onDelete = function (user) {
+        var index = this.users.indexOf(user);
+        this.users.splice(index, 1);
+    };
+    UserListComponent.prototype.addUser = function (user) {
         this.users.push(user);
     };
     UserListComponent = __decorate([

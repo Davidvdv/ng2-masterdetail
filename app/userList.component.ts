@@ -24,7 +24,12 @@ export class UserListComponent {
         this.selectedUser = user;
     }
 
-    addPlayer(user:User) {
+    onDelete(user) {
+        let index = this.users.indexOf(user);
+        this.users.splice(index, 1);
+    }
+
+    addUser(user:User) {
         this.users.push(user);
     }
 }
