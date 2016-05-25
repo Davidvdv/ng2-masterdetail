@@ -38,3 +38,6 @@ typings
 # Hidden files
 .DS_Store
 .idea/
+
+# Compiled js and map files
+app/js
