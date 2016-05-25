@@ -24,10 +24,16 @@ export class UserService {
         {"id":19,"gender":"Male","firstName":"Richard","lastName":"Hernandez","email":"rhernandezi@weibo.com"},
         {"id":20,"gender":"Male","firstName":"Earl","lastName":"White","email":"ewhitej@cloudflare.com"}];
     
-    getPlayers() {
+    findAll() {
         return this.users;
     }
-    createPlayer(newUser:User) {
+    
+    create(newUser:User) {
         this.users.push(newUser);
+    }
+    
+    delete(user) {
+        let index = this.users.indexOf(user);
+        this.users.splice(index, 1);
     }
 }

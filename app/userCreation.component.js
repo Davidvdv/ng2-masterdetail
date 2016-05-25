@@ -14,16 +14,15 @@ var user_1 = require("./user");
 var UserCreationComponent = (function () {
     function UserCreationComponent(userService) {
         this.userService = userService;
-        this.newUser = new user_1.User(21);
+        this.newUser = new user_1.User();
     }
     UserCreationComponent.prototype.onSubmit = function () {
-        this.userService.createPlayer(this.newUser);
+        this.userService.create(this.newUser);
     };
     UserCreationComponent = __decorate([
         core_1.Component({
             selector: 'user-creation',
             templateUrl: './app/templates/userCreation.component.html',
-            outputs: ['created']
         }), 
         __metadata('design:paramtypes', [user_service_1.UserService])
     ], UserCreationComponent);

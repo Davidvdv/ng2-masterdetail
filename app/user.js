@@ -1,7 +1,7 @@
 "use strict";
 var User = (function () {
     function User(id, firstName, lastName, gender, email) {
-        this.id = id ? id : 1;
+        this.id = id ? id : 21;
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;

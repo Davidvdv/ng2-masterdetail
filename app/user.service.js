@@ -32,11 +32,15 @@ var UserService = (function () {
             { "id": 19, "gender": "Male", "firstName": "Richard", "lastName": "Hernandez", "email": "rhernandezi@weibo.com" },
             { "id": 20, "gender": "Male", "firstName": "Earl", "lastName": "White", "email": "ewhitej@cloudflare.com" }];
     }
-    UserService.prototype.getPlayers = function () {
+    UserService.prototype.findAll = function () {
         return this.users;
     };
-    UserService.prototype.createPlayer = function (newUser) {
+    UserService.prototype.create = function (newUser) {
         this.users.push(newUser);
+    };
+    UserService.prototype.delete = function (user) {
+        var index = this.users.indexOf(user);
+        this.users.splice(index, 1);
     };
     UserService = __decorate([
         core_1.Injectable(), 

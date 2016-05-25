@@ -18,12 +18,5 @@
         <label for="email">Email</label>
         <input type="email" [(ngModel)]="newUser.email" id="email" class="form-control" required placeholder="Email">
     </div>
-    <div class="form-group">
-        <label for="tier">Tier</label>
-        <select [(ngModel)]="newUser.tier" id="tier" class="form-control" required>
-            <option></option>
-            <option *ngFor="let tier of ['1', '2', '3', '4']" [value]="tier">{{tier}}</option>
-        </select>
-    </div>
     <button type="submit" class="btn btn-default">Save</button>
 </form>

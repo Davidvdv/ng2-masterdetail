@@ -14,22 +14,20 @@ export class UserListComponent {
     newUser:User;
     users:Array<User>;
     selectedUser:User;
+    selectedRow;
 
-    constructor(private playerService:UserService) {
+    constructor(private userService:UserService) {
+        this.selectedRow = null;
         this.newUser = new User();
-        this.users = this.playerService.getPlayers();
+        this.users = this.userService.findAll();
     }
 
-    onSelect(user) {
+    onSelect(user, rowIndex) {
         this.selectedUser = user;
+        this.selectedRow = rowIndex;
     }
 
     onDelete(user) {
-        let index = this.users.indexOf(user);
-        this.users.splice(index, 1);
-    }
-
-    addUser(user:User) {
-        this.users.push(user);
+        this.userService.delete(user);
     }
 }

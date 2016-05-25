@@ -3,13 +3,21 @@
         <dt>Id</dt>
         <dd>{{user.id}}</dd>
 
-        <dt>Full name</dt>
-        <dd>{{user.firstName}} {{user.lastName}}</dd>
+        <dt>First name</dt>
+        <dd><input type="text" [(ngModel)]="user.firstName" class="form-control"></dd>
+
+        <dt>Last name</dt>
+        <dd><input type="text" [(ngModel)]="user.lastName" class="form-control"></dd>
 
         <dt>Gender</dt>
-        <dd>{{user.gender}}</dd>
+        <dd>
+            <select [(ngModel)]="user.gender" id="gender" class="form-control" required>
+                <option></option>
+                <option *ngFor="let gender of ['Female', 'Male']" [value]="gender">{{gender}}</option>
+            </select>
+        </dd>
 
         <dt>Email</dt>
-        <dd>{{user.email}}</dd>
+        <dd><input type="email" [(ngModel)]="user.email" class="form-control"></dd>
     </dl>
 </div>

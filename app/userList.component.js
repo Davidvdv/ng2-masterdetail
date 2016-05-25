@@ -14,20 +14,18 @@ var user_1 = require("./user");
 var userDetail_component_1 = require("./userDetail.component");
 var userCreation_component_1 = require("./userCreation.component");
 var UserListComponent = (function () {
-    function UserListComponent(playerService) {
-        this.playerService = playerService;
+    function UserListComponent(userService) {
+        this.userService = userService;
+        this.selectedRow = null;
         this.newUser = new user_1.User();
-        this.users = this.playerService.getPlayers();
+        this.users = this.userService.findAll();
     }
-    UserListComponent.prototype.onSelect = function (user) {
+    UserListComponent.prototype.onSelect = function (user, rowIndex) {
         this.selectedUser = user;
+        this.selectedRow = rowIndex;
     };
     UserListComponent.prototype.onDelete = function (user) {
-        var index = this.users.indexOf(user);
-        this.users.splice(index, 1);
-    };
-    UserListComponent.prototype.addUser = function (user) {
-        this.users.push(user);
+        this.userService.delete(user);
     };
     UserListComponent = __decorate([
         core_1.Component({
