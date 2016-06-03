@@ -1,0 +1,4 @@
+<h3>Slack channels</h3>
+<ul>
+    <li *ngFor="let slackChannel of slackChannels"><a (click)="onSelect(slackChannel)">#{{slackChannel.name}}</a></li>
+</ul>

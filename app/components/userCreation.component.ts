@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {UserService} from "./user.service";
-import {User} from "./user";
+import {UserService} from "../services/user.service";
+import {User} from "../user";
 
 @Component({
     selector: 'user-creation',
@@ -15,5 +15,6 @@ export class UserCreationComponent {
 
     onSubmit() {
         this.userService.create(this.newUser);
+        this.newUser = new User();
     }
 }

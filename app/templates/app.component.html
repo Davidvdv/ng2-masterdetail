@@ -1,1 +1,16 @@
-<user-list></user-list>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Ng2 master detail</a>
+            <ul class="nav navbar-nav">
+                <li><a [routerLink]="['/users/']">Users</a></li>
+                <li><a [routerLink]="['/api']">API</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <router-outlet></router-outlet>
+    </div>
+</div>

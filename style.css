@@ -7,3 +7,7 @@
 .td-fixed {
     width: 50%;
 }
+
+a {
+    cursor: pointer;
+}

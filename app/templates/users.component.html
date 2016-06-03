@@ -1,0 +1,8 @@
+<div class="col-md-3">
+    <user-creation></user-creation>
+</div>
+<div class="col-md-9">
+    <user-list (selectUser)="selectUser($event)"></user-list>
+    <user-detail [user]="currentUser"></user-detail>
+    <!--<router-outlet></router-outlet>-->
+</div>

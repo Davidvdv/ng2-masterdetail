@@ -1,24 +1,18 @@
-<div class="col-md-3">
-    <user-creation></user-creation>
-</div>
-<div class="col-md-9">
-    <div class="overflow-view">
-        <table class="table table-bordered table-hover">
-            <thead>
-            <th class="td-fixed">Last name</th>
-            <th>Gender</th>
-            <th class="td-fixed">Email</th>
-            <th>#</th>
-            </thead>
-            <tbody>
-            <tr *ngFor="let user of users; let i = index" (click)="onSelect(user, i)" [ngClass]="{active: selectedRow == i}">
-                <td>{{user.lastName}}</td>
-                <td>{{user.gender}}</td>
-                <td>{{user.email}}</td>
-                <td><button class="btn btn-danger" (click)="onDelete(user)">Delete</button></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <user-detail [user]="selectedUser"></user-detail>
+<div class="overflow-view">
+    <table class="table table-bordered table-hover">
+        <thead>
+        <th class="td-fixed">Last name</th>
+        <th>Gender</th>
+        <th class="td-fixed">Email</th>
+        <th>#</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users; let i = index" (click)="onSelect(user, i)" [ngClass]="{active: selectedRow == i}">
+            <td>{{user.lastName}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.email}}</td>
+            <td><button class="btn btn-danger" (click)="onDelete(user)">Delete</button></td>
+        </tr>
+        </tbody>
+    </table>
 </div>

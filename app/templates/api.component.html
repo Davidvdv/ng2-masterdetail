@@ -1,0 +1,10 @@
+<div class="col-md-6">
+    <h3>Slack users</h3>
+    <ul>
+        <li *ngFor="let slackUser of slackUsers">{{slackUser.real_name}} - { {{slackUser.name}} }</li>
+    </ul>
+    <channel-list (selectedChannel)="selectedChannel($event)"></channel-list>
+</div>
+<div class="col-md-6">
+    <channel-history *ngIf="currentChannel" [channel]="currentChannel"></channel-history>
+</div>

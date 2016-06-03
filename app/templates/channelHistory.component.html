@@ -1,0 +1,14 @@
+<form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="chat">Chat</label>
+        <input type="text" [(ngModel)]="message" id="chat" class="form-control" required placeholder="Type your message">
+    </div>
+</form>
+<div class="media" *ngFor="let message of channelHistory">
+    <a class="media-left" href="#">
+    </a>
+    <div class="media-body">
+        <h4 class="media-heading">{{message.user}}</h4>
+        <p>{{message.text}}</p>
+    </div>
+</div>
