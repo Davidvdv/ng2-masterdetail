@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class SlackService {
     private url:string = 'https://slack.com/api/';
-    private token:string = 'xoxp-47520667478-47480141843-47480774755-67bf4d5bdb';
+    private token:string = 'TOKEN';
 
     constructor(private http:Http) {}
 
